@@ -1,7 +1,11 @@
-version: '3.8'
+version: '3'
+
 services:
-  tv-proxy: 
-    build: .
+  tvproxy:
+    image: tvproxy
     ports:
       - "7860:7860"
+    environment:
+      ADMIN_PASSWORD: "tua_password_sicura"
+      SECRET_KEY: "chiave_segreta_generata"
     restart: unless-stopped
